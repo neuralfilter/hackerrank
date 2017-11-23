@@ -3,4 +3,4 @@ if __name__ == '__main__':
     b = int(raw_input())
     print(a + b)
     print(a - b)
-    print(a * b)
+    print(a * b )
