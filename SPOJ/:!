@@ -1,0 +1,12 @@
+nested_list = [[]]*10
+lowest = 0
+for i in range(int(raw_input())):
+    print(i)
+    name = raw_input()
+    score = float(raw_input())
+    nested_list[i] = [name, score]
+
+for s in range(int(len(nested_list))):
+    if(nested_list[s][1] > lowest):
+        lowest = nested_list[s][1]
+        print(lowest)
