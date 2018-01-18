@@ -1,0 +1,10 @@
+count = int(raw_input())
+k = [int(raw_input) for i in range(count)]
+temp = []
+for i in range(len(k)):
+    if k[i] not in temp:
+        temp.append(k[i])
+    elif k[i] in temp:
+        temp.remove(k[i])
+
+print len(temp)
