@@ -15,8 +15,11 @@ for i in xrange(1, len(beads)):
     temp = beads[i]
     for x in xrange(len(beads[i:])):
         if (beads[x] == temp) or (beads[x] == "w"):
-            length += 1
-    counter += 1
+           length += 1
+        elif(beads[x] != temp) and (beads[x] != "w"):
+            position = x
+            break
+
 
 fout.write("\n")
 fout.close()
