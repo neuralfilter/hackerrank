@@ -11,15 +11,28 @@ listed = []
 counter = 0
 position = 0
 length = 0
-for i in xrange(1, len(beads)):
-    temp = beads[i]
+for i in xrange(1, len(beads)/2):
+    temp = str(beads[i])
     for x in xrange(len(beads[i:])):
         if (beads[x] == temp) or (beads[x] == "w"):
-           length += 1
-        elif(beads[x] != temp) and (beads[x] != "w"):
+            length += 1
+        else:
             position = x
             break
 
-
+    temp = str(beads[position])
+    for x in xrange(position, len(beads[i:])):
+        if (beads[x] == temp) or (beads[x] == "w"):
+            length += 1
+        else:
+            listed.append(length)
+            length = 0
+            break
+if len(listed) == 0:
+    fout.write(str(len(beads)/2))
+    fout.write("\n")
+    fout.close()
+    exit()
+fout.write(str(max(listed)-1))
 fout.write("\n")
 fout.close()
